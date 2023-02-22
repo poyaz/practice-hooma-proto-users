@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package users;
+
+service UsersService {
+  rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
+  rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+  rpc Create (CreateRequest) returns (FindOneResponse) {}
+  rpc Update (UpdateRequest) returns (UpdateAndDeleteResponse) {}
+  rpc Delete (DeleteRequest) returns (UpdateAndDeleteResponse) {}
+}
+
+message FindAllRequest {
+  string username = 1;
+  string role = 2;
+}
+
+message FindAllResponse {
+  int32 count = 1;
+  repeated FindOneResponse data = 2;
+}
+
+message FindOneRequest {
+  string userId = 1;
+}
+
+message FindOneResponse {
+  string id = 1;
+  string username = 2;
+  string role = 3;
+  string name = 4;
+  string createAt = 5;
+  string updateAt = 6;
+}
+
+message CreateRequest {
+  string username = 1;
+  string role = 2;
+  string name = 3;
+}
+
+message UpdateRequest {
+  string userId = 1;
+  optional string role = 2;
+  optional string name = 3;
+}
+
+message DeleteRequest {
+  string userId = 1;
+}
+
+message UpdateAndDeleteResponse {
+  string count = 1;
+}
