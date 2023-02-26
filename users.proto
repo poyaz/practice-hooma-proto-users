@@ -11,8 +11,9 @@ service UsersService {
 }
 
 message FindAllRequest {
-  string username = 1;
-  string role = 2;
+  string name = 1;
+  string username = 2;
+  string role = 3;
 }
 
 message FindAllResponse {
@@ -29,20 +30,25 @@ message FindOneResponse {
   string username = 2;
   string role = 3;
   string name = 4;
-  string createAt = 5;
-  string updateAt = 6;
+  int32 age = 5;
+  string createAt = 6;
+  string updateAt = 7;
 }
 
 message CreateRequest {
   string username = 1;
-  string role = 2;
-  string name = 3;
+  string password = 2;
+  string role = 3;
+  string name = 4;
+  int32 age = 5;
 }
 
 message UpdateRequest {
   string userId = 1;
-  optional string role = 2;
-  optional string name = 3;
+  optional string password = 2;
+  optional string role = 3;
+  optional string name = 4;
+  optional int32 age = 5;
 }
 
 message DeleteRequest {
