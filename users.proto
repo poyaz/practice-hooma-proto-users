@@ -38,9 +38,10 @@ message FindOneResponse {
 message CreateRequest {
   string username = 1;
   string password = 2;
-  string role = 3;
-  string name = 4;
-  int32 age = 5;
+  string salt = 3;
+  string role = 4;
+  string name = 5;
+  int32 age = 6;
 }
 
 message UpdateRequest {
