@@ -56,5 +56,5 @@ message DeleteRequest {
 }
 
 message UpdateAndDeleteResponse {
-  string count = 1;
+  int32 count = 1;
 }
