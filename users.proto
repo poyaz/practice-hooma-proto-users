@@ -30,7 +30,7 @@ message FindOneResponse {
   string username = 2;
   string role = 3;
   string name = 4;
-  int32 age = 5;
+  optional int32 age = 5;
   string createAt = 6;
   string updateAt = 7;
 }
@@ -40,7 +40,7 @@ message CreateRequest {
   string password = 2;
   string role = 3;
   string name = 4;
-  int32 age = 5;
+  optional int32 age = 5;
 }
 
 message UpdateRequest {
